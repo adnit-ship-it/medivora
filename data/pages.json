@@ -1,0 +1,309 @@
+{
+    "iconRegistry": {
+        "check": {
+            "type": "check",
+            "path": "/assets/images/brand/check.svg",
+            "description": "Checkmark icon"
+        },
+        "checkmark": {
+            "type": "checkmark",
+            "path": "/assets/images/brand/check.svg",
+            "description": "Standard checkmark icon"
+        },
+        "checkmark-star": {
+            "type": "checkmark-star",
+            "path": "/assets/images/checkmark-star.svg",
+            "description": "Checkmark with star icon"
+        },
+        "checkmark-star-brown": {
+            "type": "checkmark-star-brown",
+            "path": "/assets/images/checkmark-star-brown.svg",
+            "description": "Brown checkmark with star icon"
+        },
+        "check-circle": {
+            "type": "check-circle",
+            "path": "/assets/images/intake-form/icons/check_circle.svg",
+            "description": "Checkmark in circle icon"
+        }
+    },
+    "logoRegistry": {
+        "primary": {
+            "type": "primary",
+            "path": "/assets/images/brand/logo-primary-1.svg",
+            "description": "Primary brand logo (used in navbar)"
+        },
+        "secondary": {
+            "type": "secondary",
+            "path": "/assets/images/brand/logo-secondary-1.svg",
+            "description": "Secondary/alternative brand logo (used in footer)"
+        }
+    },
+    "logoSizes": {
+        "navbar": {
+            "height": {
+                "mobile": "24px",
+                "tablet": "28px",
+                "desktop": "28px"
+            },
+            "width": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+            }
+        },
+        "footer": {
+            "height": {
+                "mobile": "20px",
+                "tablet": "26px",
+                "desktop": "32px"
+            },
+            "width": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+            }
+        },
+        "loadingScreen": {
+            "height": {
+                "mobile": "20px",
+                "desktop": "132px"
+            },
+            "width": {
+                "mobile": "auto",
+                "desktop": "auto"
+            }
+        },
+        "hero": {
+            "height": {
+                "mobile": "34px",
+                "tablet": "38px",
+                "desktop": "62px"
+            },
+            "width": {
+                "mobile": "192px",
+                "tablet": "280px",
+                "desktop": "365px"
+            }
+        },
+        "contact": {
+            "height": {
+                "mobile": "56px",
+                "tablet": "72px",
+                "desktop": "88px"
+            },
+            "width": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+            }
+        },
+        "products": {
+            "height": {
+                "mobile": "48px",
+                "tablet": "64px",
+                "desktop": "100px"
+            },
+            "width": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+            }
+        }
+    },
+    "loadingScreen": {
+        "logo": {
+            "src": "/assets/images/brand/logo-secondary-1.svg",
+            "alt": "Serenova loading logo"
+        },
+        "text": "Loading..."
+    },
+    "common": {
+        "pageTitle": "Medivora",
+             "pageDescription": "Medivora is a company that provides a service to help people lose weight.",
+        "buttons": {
+            "next": "Next",
+            "submitToProvider": "Submit to Provider",
+            "back": "Back",
+            "getStarted": "Get Started"
+        },
+        "navigation": {
+            "home": "Home",
+            "about": "About",
+            "products": "Products",
+            "contact": "Contact",
+            "contactUs": "Contact Us",
+            "product": "Product"
+        },
+        "accessibility": {
+            "toggleMenu": "Toggle mobile menu",
+            "brandLogo": "Brand Logo",
+            "menu": "Menu"
+        },
+        "media": {
+            "hamburgerMenu": {
+                "src": "/assets/images/hamburger-menu.svg",
+                "alt": "Open navigation menu icon"
+            }
+        },
+        "layout": {
+            "navbar": {
+                "height": {
+                    "mobile": "83px",
+                    "desktop": "68px"
+                }
+            },
+            "footer": {
+                "height": {
+                    "mobile": "64px",
+                    "desktop": "72px"
+                }
+            }
+        }
+    },
+    "home": {
+        "title": "Home",
+        "show": true,
+        "order": 1,
+        "description": "Home page",
+        "sections": [
+            {
+                "name": "Home Hero",
+                "component": "SectionsHero",
+                "props": {},
+                "show": true,
+                "order": 1
+            },
+            {
+                "name": "Home Trusted By",
+                "component": "SectionsTrustedBy",
+                "props": { "center": true },
+                "show": true,
+                "order": 2
+            },
+            {
+                "name": "Home Discover",
+                "component": "SectionsDiscover",
+                "props": { "showTitle": true },
+                "show": true,
+                "order": 3
+            },
+            {
+                "name": "Home Testimonials",
+                "component": "SectionsReviews",
+                "props": {},
+                "show": true,
+                "order": 4
+            },
+            {
+                "name": "Home Statistics",
+                "component": "SectionsStatistics",
+                "props": {},
+                "show": true,
+                "order": 5
+            },
+            {
+                "name": "Home Journey",
+                "component": "SectionsJourney",
+                "props": {},
+                "show": true,
+                "order": 5
+            },
+            {
+                "name": "Home CTA",
+                "component": "SectionsCTA",
+                "props": {},
+                "show": true,
+                "order": 6
+            },
+                {
+                    "name": "Home Before After",
+                "component": "SectionsBeforeAfter",
+                "props": {},
+                "show": true,
+                "order": 7
+            },
+            {
+                "name": "Home IntakeForm",
+                "component": "SectionsIntakeForm",
+                "props": {},
+                "show": true,
+                "order": 8
+            }
+        ]
+    },
+    "about": {
+        "title": "About",
+        "show": true,
+        "order": 2,
+        "description": "About page",
+        "sections": [
+            {
+                "name": "About Hero",
+                "component": "SectionsAboutBanner",
+                "props": {},
+                "show": true,
+                "order": 1
+            },
+            {
+                "name": "About Trusted By",
+                "component": "SectionsTrustedBy",
+                "props": {},
+                "show": true,
+                "order": 2
+            },
+            {
+                "name": "About Stats",
+                "component": "SectionsAboutPriority",
+                "props": {},
+                "show": true,
+                "order": 3
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact",
+        "show": true,
+        "order": 3,
+        "description": "Contact page",
+        "pageTitle": "Contact Us: Fill out the form and hear back from us",
+        "logo": {
+            "src": "/assets/images/brand/logo-secondary-1.svg",
+            "alt": "Serenova logo"
+        },
+        "sections": [
+            {
+                "name": "Contact Hero",
+                "component": "SectionsContactHero",
+                "props": {},
+                "show": true,
+                "order": 1
+            }
+        ]
+    },
+    "products": {
+        "title": "Products",
+        "show": true,
+        "pageTitle": "Explore Our Products",
+        "subtitle": "Personalized GLP-1 Medication",
+        "categoryButton": "Weight Loss",
+        "order": 4,
+        "description": "Products page",
+  
+        "sections": [
+            {
+                "name": "Products Hero",
+                "component": "SectionsProductsHero",
+                "props": {},
+                "show": true,
+                "order": 1
+            },
+            {
+                "name": "Products Discover",
+                "component": "SectionsDiscover",
+                "props": {},
+                "show": true,
+                "order": 2
+            }
+        ]
+    }
+  }

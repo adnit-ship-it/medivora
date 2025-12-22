@@ -1,0 +1,103 @@
+<template>
+  <footer class="bg-accentColor1 flex justify-center pb-4" :style="footerHeightStyle">
+    <div class="max-w-[1328px] w-full flex items-end justify-between md:justify-center px-4 md:px-8 md:gap-8">
+      <div class="flex items-center">
+        <NuxtLink to="/">
+          <div class="pb-1" :style="logoHeightStyle">
+            <img 
+              :src="footerLogoSrc" 
+              :alt="footerLogoAlt" 
+              class="h-full w-full" 
+            />
+          </div>
+        </NuxtLink>
+      </div>
+      <div class="md:block h-[1px] mb-1.5 w-full mx-2 md:mx-5 flex-1 bg-white"></div>
+
+      <!-- Navigation buttons on the right -->
+      <div class="flex items-center gap-x-2 md:gap-x-6">
+        <!-- Home link always first -->
+        <NuxtLink to="/"
+          class="text-white text-[14px] md:text-[18px] lg:text-[20px] hover:text-gray-200 transition-colors duration-200">
+          {{ navigation?.home || 'Home' }}
+        </NuxtLink>
+        <!-- Other pages ordered by pages.json order -->
+        <NuxtLink
+          v-for="page in navigationPages"
+          :key="page.key"
+          :to="pagesStore.getPageRoute(page.key)"
+          class="text-white text-[14px] md:text-[18px] lg:text-[20px] hover:text-gray-200 transition-colors duration-200"
+        >
+          {{ page.title }}
+        </NuxtLink>
+      </div>
+    </div>
+    <!-- Logo on the left -->
+  </footer>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, computed } from "vue";
+import { usePagesStore } from "~/stores/pagesStore";
+
+const pagesStore = usePagesStore();
+
+// Get common config from pagesStore
+const common = computed(() => pagesStore.getCommonConfig());
+const navigation = computed(() => common.value?.navigation);
+
+// Get navigation pages (home first, then by order)
+const navigationPages = computed(() => pagesStore.navigationPages);
+
+// Get common layout for footer heights
+const commonLayout = computed(() => pagesStore.getCommonLayout());
+
+// Get footer logo from pages.json
+const footerLogoSrc = computed(() => {
+  const logoRegistry = pagesStore.pages?.logoRegistry?.secondary;
+  return logoRegistry?.path || "/assets/images/brand/logo-alt.svg";
+});
+const footerLogoAlt = computed(() => common.value?.accessibility?.brandLogo || "Brand logo");
+
+// Mobile detection
+const isMobile = ref(false);
+
+const checkMobile = () => {
+  if (!process.client) return;
+  isMobile.value = window.innerWidth <= 768;
+};
+
+onMounted(() => {
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkMobile);
+});
+
+// Dynamic heights from common.layout
+const footerHeightStyle = computed(() => {
+  const heights = commonLayout.value?.footer?.height;
+  if (!heights) {
+    return { height: isMobile.value ? '64px' : '72px' };
+  }
+  return {
+    height: isMobile.value ? heights.mobile : heights.desktop
+  };
+});
+
+const logoHeightStyle = computed(() => {
+  const logoSizes = pagesStore.pages?.logoSizes?.footer;
+  if (!logoSizes) {
+    return { height: isMobile.value ? '20px' : '32px' };
+  }
+  return {
+    height: isMobile.value ? logoSizes.height.mobile : logoSizes.height.desktop
+  };
+});
+</script>
+
+<style scoped>
+/* Custom styles if needed */
+</style>
