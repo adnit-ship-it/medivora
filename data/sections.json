@@ -672,8 +672,8 @@
     "components": [
       {
         "logo": {
-          "src": "/assets/images/brand/logo-secondary-1.svg",
-          "alt": "Medivora secondary logo",
+          "src": "/assets/images/brand/logo-primary-1.svg",
+          "alt": "Medivora primary logo",
           "type": "svg-image",
           "show": true
         },

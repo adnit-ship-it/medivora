@@ -14,7 +14,7 @@
           mass: 1,
         },
       }"
-      :src="logoUrl || '/assets/images/brand/logo.svg'"
+      :src="logoUrl || '/assets/images/brand/logo-secondary-1.svg'"
       :alt="`${organizationName || 'Brand'} Logo`"
       class="w-auto h-[32px] md:h-[48px] object-cover"
     />

@@ -13,10 +13,11 @@ import SectionsAboutPriority from '~/components/sections/AboutPriority.vue'
 import SectionsReviews from '~/components/sections/Reviews.vue'
 import SectionsStatistics from '~/components/sections/Statistics.vue'
 import SectionsProductsHero from '~/components/sections/ProductsHero.vue'
+import SectionsContactHero from '~/components/sections/ContactHero.vue'
 
 // Map component names to actual component references
 export const SECTION_COMPONENTS: Record<string, any> = {
-    SectionsHero,
+  SectionsHero,
   SectionsDiscover,
   SectionsTrustedBy,
   SectionsJourney,
@@ -28,6 +29,7 @@ export const SECTION_COMPONENTS: Record<string, any> = {
   SectionsReviews,
   SectionsStatistics,
   SectionsProductsHero,
+  SectionsContactHero,
 }
 
 // Helper function to get component by name

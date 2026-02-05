@@ -104,7 +104,7 @@ const commonLayout = computed(() => pagesStore.getCommonLayout());
 // Get navbar logo from pages.json
 const navbarLogoSrc = computed(() => {
   const logoRegistry = pagesStore.pages?.logoRegistry?.primary;
-  return logoRegistry?.path || "/assets/images/brand/logo.svg";
+  return logoRegistry?.path || "/assets/images/brand/logo-primary-1.svg";
 });
 const navbarLogoAlt = computed(() => common.value?.accessibility?.brandLogo || "Brand logo");
 

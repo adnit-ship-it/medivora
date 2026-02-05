@@ -51,7 +51,7 @@ const paragraphColorStyle = computed(() =>
                 },
             }" 
                 v-if="sectionData?.logo?.show !== false"
-                :src="logoUrl || sectionData?.logo?.src " 
+                :src="sectionData?.logo?.src || logoUrl || '/assets/images/brand/logo-primary-1.svg'" 
                 :alt="`${organizationName || 'Brand'} Logo`"
                 class="w-auto h-[32px] lg:h-[64px] object-cover" />
             <div class="w-full flex flex-col md:flex-row gap-8 lg:gap-20 items-center mt-6">
