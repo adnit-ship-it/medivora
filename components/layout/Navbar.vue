@@ -1,8 +1,8 @@
 <template>
   <nav :class="[
-    'w-full fixed top-0 z-50 flex justify-center shadow-lg',
+    'w-full fixed z-50 flex justify-center shadow-lg',
     props.color || 'bg-white'
-  ]">
+  ]" style="top: var(--announcement-height)">
     <div v-motion :initial="{ opacity: 0.3, y: 8 }" :visible-once="{
       opacity: 1,
       y: 0,

@@ -75,6 +75,20 @@ export interface PageSectionReference {
         alt: string
       }
     }
+    announcement?: AnnouncementConfig
+  }
+
+  export interface AnnouncementConfig {
+    enabled: boolean
+    text: string
+    link?: string
+    backgroundColor: string
+    textColor: string
+    heights: {
+      mobile: string
+      tablet?: string
+      desktop: string
+    }
   }
   
   export interface PagesData {

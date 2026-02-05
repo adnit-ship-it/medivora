@@ -1,7 +1,8 @@
 <template>
-  <div class="min-h-screen bg-white flex flex-col">
+  <div class="min-h-screen  flex flex-col">
+    <LayoutAnnouncementBar />
     <LayoutNavbar :hideNavigation="isCheckoutOrConsultationPage" />
-    <main class="flex-1">
+    <main class="flex-1" style="padding-top: var(--header-offset)">
       <slot />
     </main>
     <LayoutFooter />

@@ -22,6 +22,13 @@
 
 /* Custom styles */
 @layer base {
+  :root {
+    /* Header height CSS variables - defaults for SSR */
+    --announcement-height: 0px;
+    --navbar-height: 68px;
+    --header-offset: 68px;
+  }
+
   html {
     font-family: "Quicksand", "Inter", sans-serif;
   }

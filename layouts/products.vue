@@ -1,7 +1,8 @@
 <template>
-  <div class="min-h-screen bg-white flex flex-col">
-    <LayoutNavbar color="bg-accentColor2" />
-    <main class="flex-1">
+  <div class="min-h-screen bg-backgroundColor flex flex-col">
+    <LayoutAnnouncementBar />
+    <LayoutNavbar />
+    <main class="flex-1" style="padding-top: var(--header-offset)">
       <slot />
     </main>
     <LayoutFooter />

@@ -1,5 +1,5 @@
 <template>
-  <UiSectionContainer class="mb-20 bg-white " >
+  <UiSectionContainer class="mb-20 bg-accentColor2 " >
     <img
       v-if="sectionData?.logo?.show !== false"
       v-motion

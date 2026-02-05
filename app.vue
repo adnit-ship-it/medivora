@@ -2,7 +2,7 @@
   <!-- Global Loading Screen -->
   <GlobalLoadingScreen :is-visible="showLoadingScreen" :is-fading-out="isFadingOut" />
 
-  <div>
+  <div :style="cssVariables">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -12,8 +12,10 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import { usePagesStore } from "~/stores/pagesStore";
+import { useHeaderHeights } from '~/composables/useHeaderHeights'
 
 const pagesStore = usePagesStore();
+const { cssVariables } = useHeaderHeights();
 
 // Set page title dynamically
 const pageTitle = computed(() => pagesStore.pages?.common?.pageTitle || 'Medivora');

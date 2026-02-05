@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { PagesData, PageConfig, PageSectionReference } from '../types/pages.ts'
+import type { PagesData, PageConfig, PageSectionReference, AnnouncementConfig } from '../types/pages.ts'
 
 // Section data structure from sections.json
 export interface SectionData {
@@ -148,6 +148,16 @@ export const usePagesStore = defineStore('pages', () => {
     return registry
   }
 
+    // Announcement configuration
+    const announcement = computed((): AnnouncementConfig | null => {
+      return pages.value?.announcement || null
+    })
+  
+    // Check if announcement is enabled
+    const isAnnouncementEnabled = computed((): boolean => {
+      return pages.value?.announcement?.enabled === true
+    })
+
   // Get common layout config (navbar/footer heights)
   const getCommonLayout = () => {
     return pages.value?.common?.layout || null
@@ -169,6 +179,8 @@ export const usePagesStore = defineStore('pages', () => {
     getSectionData,
     getCommonConfig,
     getIconRegistry,
-    getCommonLayout
+    getCommonLayout,
+    announcement,
+    isAnnouncementEnabled
   }
 })

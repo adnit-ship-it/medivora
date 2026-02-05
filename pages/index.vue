@@ -12,7 +12,7 @@ const homeSections = computed(() => pagesStore.getPageSections('home'))
 </script>
 
 <template>
-  <div class="pt-[83px] lg:pt-[68px]">
+  <div class="">
     <template v-for="section in homeSections" :key="section?.name">
       <DynamicSection
         v-if="section && section.show !== false"
