@@ -48,6 +48,8 @@ export interface PageSectionReference {
   
   export interface CommonConfig {
     pageTitle: string
+    pageDescription?: string
+
     buttons: {
       next: string
       submitToProvider: string

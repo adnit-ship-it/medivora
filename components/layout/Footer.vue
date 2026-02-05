@@ -1,6 +1,7 @@
 <template>
-  <footer class="bg-accentColor1 flex justify-center pb-4" :style="footerHeightStyle">
-    <div class="max-w-[1328px] w-full flex items-end justify-between md:justify-center px-4 md:px-8 md:gap-8">
+  <footer class="bg-accentColor1 flex flex-col items-center pb-4" :style="footerHeightStyle">
+    <!-- Main navigation row -->
+    <div class="max-w-[1328px] w-full flex items-end justify-between md:justify-center px-4 md:px-8 md:gap-8 flex-1">
       <div class="flex items-center">
         <NuxtLink to="/">
           <div class="pb-1" :style="logoHeightStyle">
@@ -32,15 +33,34 @@
         </NuxtLink>
       </div>
     </div>
-    <!-- Logo on the left -->
+
+    <!-- Legal links row -->
+    <div v-if="legalLinks.length > 0" class="w-full flex justify-center pt-2">
+      <div class="flex items-center gap-1 text-white/80 text-[12px] md:text-[14px]">
+        <template v-for="(link, index) in legalLinks" :key="link.id">
+          <span v-if="index > 0" class="mx-1">|</span>
+          <NuxtLink 
+            :to="`/legal/${link.slug}`"
+            class="hover:text-white transition-colors duration-200"
+          >
+            {{ link.footerLabel }}
+          </NuxtLink>
+        </template>
+      </div>
+    </div>
   </footer>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import { usePagesStore } from "~/stores/pagesStore";
+import { useLegalStore } from "~/stores/legalStore";
 
 const pagesStore = usePagesStore();
+const legalStore = useLegalStore();
+
+// Get legal links for footer (filtered by showInFooter, sorted by order)
+const legalLinks = computed(() => legalStore.footerLinks);
 
 // Get common config from pagesStore
 const common = computed(() => pagesStore.getCommonConfig());
